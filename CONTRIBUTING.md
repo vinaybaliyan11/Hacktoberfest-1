@@ -6,3 +6,4 @@ asknkitkr - ReverseLinkedList.cpp
 10doshi12 - simplecalculator.py
 Riya - Inserion Sort in Cpp
 Ashutosh Aswal - Added code for first occurance of a number in an array
+lakshay khanna- logical shift in c
