@@ -1,0 +1,41 @@
+package javaapplication1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import javax.swing.JOptionPane;
+
+public class Server {
+
+    public static void main(String[] args) {
+        InputStream is=null;
+        try {
+            
+            ServerSocket sskt   = new ServerSocket(123);  //incoming request from a specific port number
+            while (true) {
+                
+                Socket skt = sskt.accept();   
+                
+                //Reading Data
+                is = skt.getInputStream();
+                DataInputStream dis = new DataInputStream(is);
+                System.out.println("Client Says " + dis.readUTF());
+                
+                
+                //Writing Data
+                String data = JOptionPane.showInputDialog("Enter Message");
+                OutputStream os = skt.getOutputStream();
+                DataOutputStream dos = new DataOutputStream(os);
+                dos.writeUTF(data);
+            }
+        } catch (Exception e) {
+        }
+        finally
+        {
+     
+        }
+    }    
+}
