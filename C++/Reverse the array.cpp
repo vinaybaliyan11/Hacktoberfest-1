@@ -7,9 +7,7 @@ void rvereseArray(int arr[], int start, int end)
 {
     while (start < end)
     {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+        swap(arr[start],arr[end]); // using inbuilt function to swap the values
         start++;
         end--;
     }
